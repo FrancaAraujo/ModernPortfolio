@@ -77,7 +77,7 @@ app_ui = ui.page_fluid(
                     portfólio acessível aos alunos dos primeiros anos de graduação. Neste sentido, 
                     utilizando os resultados obtidos durante nossa pesquisa, elaboramos este dashboard 
                     que pode ser utilizado como meio para realizar backtest simples utilizando duas 
-                    estratégias principais (Markowitz e Ingênua).
+                    estratégias principais (Markowitz e Ingênua). 
                     """
                 ),
             ),
