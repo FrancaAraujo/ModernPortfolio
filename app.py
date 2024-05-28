@@ -64,7 +64,7 @@ app_ui = ui.page_fluid(
     ),
     ui.h2(
         {"class": "app-header"},
-        html.escape("Otimização aplicada a Teoria Moderna do Portfólio"),
+        "Otimização aplicada a Teoria Moderna do Portfólio",
     ),
     ui.row(
         ui.column(
@@ -73,11 +73,11 @@ app_ui = ui.page_fluid(
                 {"class": "app-col app-description"},
                 ui.p(
                     """
-                    Nosso objetivo principal com este dashboard e tornar a teoria moderna do 
-                    portfolio acessivel aos alunos dos primeiros anos de graduacao. Neste sentido, 
+                    Nosso objetivo principal com este dashboard é tornar a teoria moderna do 
+                    portfólio acessível aos alunos dos primeiros anos de graduação. Neste sentido, 
                     utilizando os resultados obtidos durante nossa pesquisa, elaboramos este dashboard 
                     que pode ser utilizado como meio para realizar backtest simples utilizando duas 
-                    estrategias principais (Markowitz e Ingenua).
+                    estratégias principais (Markowitz e Ingênua).
                     """
                 ),
             ),
@@ -93,15 +93,15 @@ app_ui = ui.page_fluid(
                         {"class": "app-controls"},
                         ui.input_select(
                             "grafico",
-                            "Selecione o grafico",
+                            "Selecione o gráfico",
                             {
-                                "linhas": "Grafico de Linhas",
-                                "barras": "Grafico de Barras",
+                                "linhas": "Gráfico de Linhas",
+                                "barras": "Gráfico de Barras",
                             },
                         ),
                         ui.input_date_range(
                             "x",
-                            "Periodo de investimento",
+                            "Período de investimento",
                             language="pt-BR",
                             format="dd-mm-yyyy",
                             min="2017-12-29",
@@ -113,7 +113,7 @@ app_ui = ui.page_fluid(
                         ui.input_numeric("z", "Aporte Mensal", value=400),
                         ui.input_action_button(
                             "run",
-                            "Executar Simulacao",
+                            "Executar Simulação",
                             class_="btn btn-primary app-action-button",
                         ),
                     ),
@@ -122,21 +122,21 @@ app_ui = ui.page_fluid(
                     "Markowitz",
                     ui.p(
                         """
-                        Nesta estrategia, os aportes seriam feitos em um unico ativo de
-                        modo que ao final do aporte a proporcao de cada ativo na carteira seja a mais proxima
-                        possivel do vetor de alocacao de capital. O vetor de alocacao de capital e obtido
-                        com o objetivo de encontrar o portfolio com menor volatilidade.
+                        Nesta estratégia, os aportes seriam feitos em um único ativo de
+                        modo que ao final do aporte a proporção de cada ativo na carteira seja a mais próxima
+                        possível do vetor de alocação de capital. O vetor de alocação de capital é obtido
+                        com o objetivo de encontrar o portfólio com menor volatilidade.
                         """
                     ),
                 ),
                 ui.nav_panel(
-                    "Ingenua",
+                    "Ingênua",
                     ui.p(
                         """
-                        A estrategia ingenua realiza a simulacao de um investidor iniciante que 
+                        A estratégia ingênua realiza a simulação de um investidor iniciante que 
                         busca sempre manter a sua carteira de ativos balanceada em 50/50, ou seja,
                         realiza os aportes mensais tentando balancear o dinheiro nos ativos (BOVA11 e IVVB11),
-                        sempre realizando aporte no ativo com menor valor no primeiro dia do mes.
+                        sempre realizando aporte no ativo com menor valor no primeiro dia do mês.
                         """
                     ),
                 ),
@@ -146,7 +146,7 @@ app_ui = ui.page_fluid(
             8,
             ui.navset_card_tab(
                 ui.nav_panel(
-                    "Graficos",
+                    "Gráficos",
                     ui.row(
                         ui.column(12, output_widget("plot"), ),
                         ui.column(12, ui.output_plot("plot2")),
@@ -1258,10 +1258,10 @@ def server(input, output, session):
         dicionario_marko = dict(zip(chaves, valorInvestidoMarko1))
         dicionario_ingenua = dict(zip(chaves, valorInvestidoAporte1))
         dicionario_cdi = dict(zip(chaves, ValorCDItabela1))
-        dados_valores["Estrategia Conservadora"] = dicionario_estrategia3
-        dados_valores["Estrategia do Portfolio Eficiente"] = dicionario_estrategia2
+        dados_valores["Estratégia Conservadora"] = dicionario_estrategia3
+        dados_valores["Estratégia do Portfólio Eficiente"] = dicionario_estrategia2
         dados_valores["Markowitz"] = dicionario_marko
-        dados_valores["Ingenua"] = dicionario_ingenua
+        dados_valores["Ingênua"] = dicionario_ingenua
         dados_valores["CDI"] = dicionario_cdi
 
         ydata1 = valorInvestidoMarko1
@@ -1287,9 +1287,9 @@ def server(input, output, session):
 
             # ConfiguraÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂµes do grÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¡fico
             lineplot.update_layout(
-                title="Graficos de Linhas",
+                title="Gráficos de Linhas",
                 xaxis_title="Datas",
-                yaxis_title="Patrimonio Final",
+                yaxis_title="Patrimônio Final",
                 legend_title="Dados",
                 xaxis=dict(
                     tickmode='array',
@@ -1323,41 +1323,41 @@ def server(input, output, session):
                 )
                 categories.append("Markowitz")
                 verif = 1
-            if "Estrategia do Portfolio Eficiente" in selected:
-                string_list.append("Estrategia do Portfolio Eficiente")
+            if "Estratégia do Portfólio Eficiente" in selected:
+                string_list.append("Estratégia do Portfólio Eficiente")
                 values.append(
                     round(
-                        dados_valores["Estrategia do Portfolio Eficiente"][
+                        dados_valores["Estratégia do Portfólio Eficiente"][
                             len(valorInvestidoEstrategia_2) + ComecoTotal - 1
                             ],
                         2,
                     )
                 )
-                categories.append("Estrategia do Portfolio Eficiente")
+                categories.append("Estratégia do Portfólio Eficiente")
                 verif = 1
-            if "Estrategia Conservadora" in selected:
-                string_list.append("Estrategia Conservadora")
+            if "Estratégia Conservadora" in selected:
+                string_list.append("Estratégia Conservadora")
                 values.append(
                     round(
-                        dados_valores["Estrategia Conservadora"][
+                        dados_valores["Estratégia Conservadora"][
                             len(valorInvestidoEstrategia_2) + ComecoTotal - 1
                             ],
                         2,
                     )
                 )
-                categories.append("Estrategia Conservadora")
+                categories.append("Estratégia Conservadora")
                 verif = 1
-            if "Ingenua" in selected:
-                string_list.append("Ingenua")
+            if "Ingênua" in selected:
+                string_list.append("Ingênua")
                 values.append(
                     round(
-                        dados_valores["Ingenua"][
+                        dados_valores["Ingênua"][
                             len(valorInvestidoMarko1) + ComecoTotal - 1
                             ],
                         2,
                     )
                 )
-                categories.append("Ingenua")
+                categories.append("Ingênua")
                 verif = 1
             if "BOVA11" in selected:
                 string_list.append("BOVA11")
@@ -1458,7 +1458,7 @@ def server(input, output, session):
             
             # Definir rótulos e título
             ax.set_ylabel("Performance Relativa ao CDI (%)")
-            ax.set_title("Comparacao da Performance dos Ativos Relativa ao CDI")
+            ax.set_title("Comparação da Performance dos Ativos Relativa ao CDI")
             
             # Adicionar a porcentagem dentro de cada barra
             for bar in bars:
