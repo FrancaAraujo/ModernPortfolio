@@ -104,9 +104,9 @@ app_ui = ui.page_fluid(
                             "Período de investimento",
                             language="pt-BR",
                             format="dd-mm-yyyy",
-                            min="2017-12-29",
+                            min="2018-01-01",
                             max="2024-01-22",
-                            start="2017-12-29",
+                            start="2018-01-01",
                             end="2023-12-31",
                         ),
                         ui.input_numeric("y", "Investimento Inicial", value=1000),
@@ -249,7 +249,7 @@ def server(input, output, session):
         cdi = df
         data = list(input.x())
 
-        data_inicio = data[0] - timedelta(365)
+        data_inicio = data[0] - timedelta(370)
         data_final = data[1]
         #print(type(data_inicio))
         #print(data_inicio + timedelta(365))
