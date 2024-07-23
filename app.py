@@ -164,11 +164,11 @@ dados_valores = {}
 def server(input, output, session):
     @reactive.Calc
     def url():
-        return f"https://api.bcb.gov.br/dados/serie/bcdata.sgs.4391/dados?formato=json"
+        return f"https://api.bcb.gov.br/dados/serie/bcdata.sgs.4391/dados?"
 
     @reactive.Calc
     def urlDiariocdi():
-        return f"https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados?formato=json"
+        return f"https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados?"
 
     @reactive.Calc
     def url2():
