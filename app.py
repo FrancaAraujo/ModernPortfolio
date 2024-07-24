@@ -227,7 +227,7 @@ def server(input, output, session):
     async def plot():
         #print("entrei")
         selected = ["Markowitz", "Ingênua","IVVB11", "BOVA11" , "CDI", "Estratégia do Portfólio Eficiente", "Estratégia Conservadora"]
-        # Atualiza os valores iniciais e finais.
+        # Atualiza os valores iniciais e finais. update
         datacdiDiario = await cdiDia_data()
         data1 = await cdi_data()
         dataTeste = await geral_data()
