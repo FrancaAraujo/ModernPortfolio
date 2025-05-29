@@ -168,7 +168,7 @@ def server(input, output, session):
 
     @reactive.Calc
     def urlDiariocdi():
-        return f"https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados?"
+        return f"https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados?dataInicial=29/05/2015&dataFinal=29/05/2025"
 
     @reactive.Calc
     def url2():
